@@ -115,5 +115,8 @@
     <None Include="Fichiers_Csv\theme.csv" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Schema_BDD\BDD.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
