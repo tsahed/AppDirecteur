@@ -9,21 +9,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ModelLayers.Data
 {
         class DAOavis
         {
             #region Attributs
             private dbal _dbal;
-            private DAOclient _DAOclient;
+            //private DAOclient _DAOclient;
             private DAOsalles _DAOsalles;
             #endregion
 
             #region Constructeur
-            public void DAOAvis(dbal dbal, DAOclient DAOclient, DAOsalles DAOsalles)
+            public void DAOAvis(dbal dbal, DAOsalles DAOsalles)
             {
                 _dbal = dbal;
-                _DAOclient = DAOclient;
+                //_DAOclient = DAOclient;
                 _DAOsalles = DAOsalles;
             }
             #endregion
