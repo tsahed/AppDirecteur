@@ -115,5 +115,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ModelLayers\ModelLayers.csproj">
+      <Project>{2729e677-8f17-43a4-919c-5cacef4d2bd9}</Project>
+      <Name>ModelLayers</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
