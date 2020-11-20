@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace ModelLayers.Data
 {
-        class DAOavis
+        public class DAOavis
         {
             #region Attributs
             private dbal _dbal;
@@ -34,7 +34,7 @@ namespace ModelLayers.Data
             {
                 string AvisInsert;
 
-                AvisInsert = ("avis(idAvis, idClient, idSalle, avis) values(" + unavis.IdAvis + "," + unavis.IdClient + "," + unavis.IdSalle + ",'" + unavis.Avis1.Replace("'", "''") + "')");
+                AvisInsert = ("avis (idAvis, idClient, idSalle, avis) values (" + unavis.IdAvis + "," + unavis.IdClient + "," + unavis.IdSalle + ",'" + unavis.Avis.Replace("'", "''") + "')");
                 _dbal.Insert(AvisInsert);
             }
 
@@ -50,7 +50,7 @@ namespace ModelLayers.Data
             {
                 string AvisUpdate;
 
-                AvisUpdate = ("avis set idAvis ='" + unavis.IdAvis + "', idClient = '" + unavis.IdClient + "', idSalle ='" + unavis.IdSalle + "', avis = '" + unavis.Avis1.Replace("'", "''") + "'");
+                AvisUpdate = ("avis set idAvis ='" + unavis.IdAvis + "', idClient = '" + unavis.IdClient + "', idSalle ='" + unavis.IdSalle + "', avis = '" + unavis.Avis.Replace("'", "''") + "'");
                 _dbal.Update(AvisUpdate);
             }
 

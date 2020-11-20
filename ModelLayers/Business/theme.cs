@@ -6,30 +6,30 @@ using System.Threading.Tasks;
 
 namespace ModelLayers.Business
 {
-    class theme
+    public class theme
     {
             #region Attributs
-            private int _idTheme;
+            private int _id;
             private string _theme;
             #endregion
 
             #region Constructeurs
-            public theme(int idTheme, string theme)
+            public theme(int id, string theme)
             {
-                _idTheme = idTheme;
+                _id = id;
                 _theme = theme;
             }
 
             public theme()
             {
-                _idTheme = -1;
+                _id = -1;
                 _theme = "";
             }
             #endregion
 
             #region Accesseurs
-            public int IdTheme { get => _idTheme; set => _idTheme = value; }
-            public string Theme1 { get => _theme; set => _theme = value; }
-            #endregion
-        }
+            public int IdTheme { get => _id; set => _id = value; }
+            public string Theme { get => _theme; set => _theme = value; }
+        #endregion
+    }
 }

@@ -15,10 +15,10 @@ using CsvHelper.Expressions;
 
 namespace ModelLayers.Data
 {
-    class DAOsalles
+    public class DAOsalles
     {
         #region Attributs
-        private dbal _dbal;
+        public dbal _dbal;
         #endregion
 
         #region Constructeurs
@@ -34,7 +34,7 @@ namespace ModelLayers.Data
         {
             string SalleInsert;
 
-            SalleInsert = ("salles(idSalle, ville) values(" + unesalle.IdSalle + ",'" + unesalle.Ville.Replace("'", "''") + "')");
+            SalleInsert = ("salle (idSalle, ville, idTheme) values (" + unesalle.IdSalle + ",'" + unesalle.Ville.Replace("'", "''") + "'," + unesalle.IdTheme + ")");
             _dbal.Insert(SalleInsert);
         }
 
@@ -50,7 +50,7 @@ namespace ModelLayers.Data
         {
             string SalleUpdate;
 
-            SalleUpdate = ("salles set id ='" + unesalle.IdSalle + "' , nom = '" + unesalle.Ville.Replace("'", "''") + "'");
+            SalleUpdate = ("salles set id ='" + unesalle.IdSalle + "' , nom = '" + unesalle.Ville.Replace("'", "''") + unesalle.IdTheme + "'");
             _dbal.Update(SalleUpdate);
         }
 
@@ -76,7 +76,7 @@ namespace ModelLayers.Data
             List<salles> listSalles = new List<salles>();
             foreach (DataRow r in _dbal.SelectAll("salles").Rows)
             {
-                listSalles.Add(new salles((int)r["idSalle"], (string)r["ville"]));
+                listSalles.Add(new salles((int)r["idSalle"], (string)r["ville"], (int)r["idSalle"]));
             }
             return listSalles;
         }
@@ -84,13 +84,13 @@ namespace ModelLayers.Data
         public salles SelectByName(string salle)
         {
             DataRow r = _dbal.SelectByField("salles", "nom like '" + salle + "'").Rows[0];
-            return new salles((int)r["idSalle"], (string)r["ville"]);
+            return new salles((int)r["idSalle"], (string)r["ville"], (int)r["idSalle"]);
         }
 
         public salles SelectById(int idSalle)
         {
             DataRow r = _dbal.SelectById("salles", idSalle);
-            return new salles((int)r["idSalle"], (string)r["ville"]);
+            return new salles((int)r["idSalle"], (string)r["ville"], (int)r["idSalle"]);
         }
         #endregion
     }

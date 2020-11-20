@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace ModelLayers.Data
 {
-    class DAOtheme
+    public class DAOtheme
     {
         #region Attributs
         private dbal _dbal;
@@ -29,7 +29,7 @@ namespace ModelLayers.Data
         {
             string ThemeInsert;
 
-            ThemeInsert = ("theme(idTheme, theme) values(" + untheme.IdTheme + ",'" + untheme.Theme1.Replace("'", "''") + "')");
+            ThemeInsert = ("themes (id, theme) values (" + untheme.IdTheme + ",'" + untheme.Theme.Replace("'", "''") + "')");
             _dbal.Insert(ThemeInsert);
         }
 
@@ -45,7 +45,7 @@ namespace ModelLayers.Data
         {
             string ThemeUpdate;
 
-            ThemeUpdate = ("pays set id ='" + untheme.IdTheme + "' , nom = '" + untheme.Theme1.Replace("'", "''") + "'");
+            ThemeUpdate = ("pays set id ='" + untheme.IdTheme + "' , nom = '" + untheme.Theme.Replace("'", "''") + "'");
             _dbal.Update(ThemeUpdate);
         }
 

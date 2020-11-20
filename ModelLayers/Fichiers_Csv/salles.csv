@@ -1,5 +1,5 @@
-idSalle; ville
-1; Annecy
-2; Thonon-les-bains
-3; Chamonix
-4; Bonneville
+idSalle;ville;idTheme
+1;Annecy;1
+2;Thonon-les-bains;2
+3;Chamonix;3
+4;Bonneville;4

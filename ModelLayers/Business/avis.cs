@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ModelLayers.Business
 {
-    class avis
+    public class avis
     {
         #region Attributs
         private int _idAvis;
@@ -37,7 +37,7 @@ namespace ModelLayers.Business
         public int IdAvis { get => _idAvis; set => _idAvis = value; }
         public int IdClient { get => _idClient; set => _idClient = value; }
         public int IdSalle { get => _idSalle; set => _idSalle = value; }
-        public string Avis1 { get => _avis; set => _avis = value; }
+        public string Avis { get => _avis; set => _avis = value; }
         #endregion
     }
 }
